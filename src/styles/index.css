@@ -1,13 +1,100 @@
-:root {
+/* :root {
   --color-main: #333;
-}
-
+} */
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-  color: var(--color-main);
+  /* color: var(--color-main); */
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  color: #000000;
+  background-color: #bbbbbb;
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
+.select-box{
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.select-box .options-container{
+  background-color: white;
+  width: 201px;
+  transition: all 0.4s;
+  overflow: hidden;
+  border-top: 1px solid #c3c3c3;
+  order: 0;
+}
+
+.select-box .options-container.active{
+  max-height: 205px;
+  opacity: 1;
+}
+
+.selected{
+  background-color: white;
+  width: 201px;
+  position: relative;
+  outline: none;
+  border: none;
+  order: 1;
+}
+
+.select-box .option,
+.selected{
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.select-box .option:hover{
+  color: #3ebfcf;
+}
+
+.select-box label{
+  cursor: pointer;
+  position: relative;
+  padding-left: 10px;
+}
+
+.select-box label::before{
+  content: "+";
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  transition: all 0.4s;
+}
+
+.select-box .option .checkbox{
+  display: none;
+}
+
+input:checked ~ label{
+  color: #c3c3c3;
+}
+
+input:checked ~ label::before{
+  transform: rotate(90deg);
+  top: 3px;
+}
+
+strong{
+  margin-top: 20px;
+  color: #005863;
+  border-radius: 8px;
+  height: 50px;
+  width: 500px;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
